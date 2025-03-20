@@ -35,7 +35,17 @@
       ]
     ],
     "experiments": {
-      "typedRoutes": true
-    }
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "b5696421-6a61-4a83-bf18-41fea230f48a"
+      }
+    },
+    "owner": "raihannismara"
   }
 }
