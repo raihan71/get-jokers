@@ -1,11 +1,14 @@
 import React from 'react';
 import Scroller from '../components/Scroller';
 import { View } from 'react-native';
+import CardParent from '../components/Joke/CardParent';
 
 const Home = () => {
   return (
     <Scroller>
-      <View className="h-[100px] bg-red-500" />
+      <View className="h-auto p-2">
+        <CardParent />
+      </View>
       <View className="h-[100px] bg-blue-500" />
       <View className="h-[100px] bg-green-500" />
       <View className="h-[100px] bg-yellow-500" />
