@@ -17,7 +17,7 @@
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/bottom-tabs": "^7.2.0",
-    "@react-navigation/native": "^7.0.14",
+    "@react-navigation/native": "^7.0.17",
     "babel-plugin-react-compiler": "^19.0.0-beta-e552027-20250112",
     "eslint-plugin-react-compiler": "^19.0.0-beta-3229e95-20250315",
     "expo": "~52.0.39",
@@ -43,7 +43,8 @@
     "react-native-screens": "~4.4.0",
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
-    "tailwindcss": "3.3.2"
+    "tailwindcss": "3.3.2",
+    "@react-native-masked-view/masked-view": "0.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

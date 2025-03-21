@@ -1,20 +1,40 @@
 import React from 'react';
-import Scroller from '../components/Scroller';
-import { View } from 'react-native';
-import CardParent from '../components/Joke/CardParent';
+import { RefreshControl, View } from 'react-native';
+import { useJokes } from '../hooks/useJokesContext';
+import { JokesCard, Scroller } from '../components';
+import colors from '../constants/colors';
 
 const Home = () => {
+  const {
+    categories,
+    jokes,
+    loading,
+    handlePressToTop,
+    handleAddMore,
+    getCategories,
+  } = useJokes();
+
   return (
-    <Scroller>
-      <View className="h-auto p-2">
-        <CardParent />
+    <Scroller
+      refreshControl={
+        <RefreshControl
+          refreshing={loading}
+          onRefresh={getCategories}
+          colors={[colors.primary]}
+        />
+      }>
+      <View className="h-auto p-2.5">
+        {categories?.map((category: string, index: number) => (
+          <JokesCard
+            key={category}
+            noId={index + 1}
+            category={category}
+            jokes={jokes[category]}
+            pressToTop={() => handlePressToTop(index)}
+            addMore={() => handleAddMore(category)}
+          />
+        ))}
       </View>
-      <View className="h-[100px] bg-blue-500" />
-      <View className="h-[100px] bg-green-500" />
-      <View className="h-[100px] bg-yellow-500" />
-      <View className="h-[100px] bg-purple-500" />
-      <View className="h-[100px] bg-orange-500" />
-      <View className="h-[100px] bg-pink-500" />
     </Scroller>
   );
 };

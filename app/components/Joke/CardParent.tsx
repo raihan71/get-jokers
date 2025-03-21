@@ -1,39 +1,43 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Pressable } from 'react-native';
+import { Text, TouchableOpacity, Pressable } from 'react-native';
 import { styled } from 'nativewind';
 
 const StyledPressable = styled(Pressable);
 
-const CardParent = ({ jokes = ['Joke 1', 'Joke 2'] }) => {
-  const [showDetails, setShowDetails] = React.useState(false);
+interface CardParentProps {
+  no: number;
+  title: string;
+  showDetails: boolean;
+  setShowDetails: (showDetails: boolean) => void;
+  handleToTop?: () => void;
+}
 
+const CardParent = ({
+  no,
+  title,
+  setShowDetails,
+  showDetails,
+  handleToTop,
+}: CardParentProps) => {
   return (
-    <>
-      <StyledPressable
-        onPress={() => setShowDetails(!showDetails)}
-        className="flex flex-row items-center shadow justify-between p-4 border border-slate-200 rounded-lg bg-white">
-        <Text>1</Text>
-        <Text>Technology</Text>
-        <TouchableOpacity className="bg-blue-500 p-1.5 rounded-md">
-          <Text className="text-white">Go Top</Text>
-        </TouchableOpacity>
-        {showDetails ?
-          <TouchableOpacity className="bg-blue-500 p-2 rounded-full">
-            <Text>👀</Text>
-          </TouchableOpacity>
-        : null}
-      </StyledPressable>
-
-      {showDetails && (
-        <View className="p-4 mx-1 bg-slate-50 rounded-b-lg border border-slate-200 border-t-0">
-          {jokes.map((joke, index) => (
-            <Text key={index} className="mb-2">
-              {joke}
-            </Text>
-          ))}
-        </View>
-      )}
-    </>
+    <StyledPressable
+      onPress={() => setShowDetails(!showDetails)}
+      className="flex cursor-pointer flex-row items-center shadow justify-between p-4 border-t border-l border-r border-b-2 border-slate-200 bg-white rounded-md">
+      <Text>{no}</Text>
+      <Text>{title}</Text>
+      <TouchableOpacity
+        onPress={handleToTop}
+        className={`${no === 1 ? 'bg-red-200' : 'bg-green-200'} p-2 rounded-full`}>
+        <Text className="text-white text-xs">{no === 1 ? '⬆️' : '↗️'}</Text>
+      </TouchableOpacity>
+      {showDetails ?
+        <Pressable
+          onPress={() => setShowDetails(!showDetails)}
+          className="p-2 border border-yellow-100 bg-amber-200 rounded-full">
+          <Text>👀</Text>
+        </Pressable>
+      : null}
+    </StyledPressable>
   );
 };
 
