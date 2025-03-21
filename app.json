@@ -14,8 +14,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon/foreground.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#FFC107"
+      },
+      "package": "com.raihannismara.getjokers"
     },
     "web": {
       "bundler": "metro",
@@ -29,7 +30,7 @@
         {
           "image": "./assets/images/splash.png",
           "resizeMode": "cover",
-          "backgroundColor": "#FFC107"
+          "backgroundColor": "#fff"
         }
       ]
     ],
