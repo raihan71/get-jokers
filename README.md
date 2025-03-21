@@ -1,6 +1,11 @@
 # Welcome to GetJokers 🤡
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a React Native [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+
+<div style="display: flex; justify-content: space-between;">
+<img src="https://github.com/user-attachments/assets/794991d0-3b6d-42ff-b9ec-28c692704ef1" width="300" alt="App Screenshot 1" />
+<img src="https://github.com/user-attachments/assets/f45ad58c-076f-46e1-9036-33f3ee16cdb4" width="300" alt="App Screenshot 2" />
+</div>
 
 ## Get started
 
